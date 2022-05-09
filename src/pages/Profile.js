@@ -1,8 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Container, Navbar, Button } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+const profileBtns = ['Done', 'Favorite', 'Logout'];
 
 function Profile() {
   const history = useHistory();
@@ -10,51 +12,37 @@ function Profile() {
   const getEmail = JSON.parse(localStorage.getItem('user') || '{}');
   const emailFromLocalStorage = (getEmail.email);
 
-  const logout = () => {
-    localStorage.clear();
-    history.push('/');
+  const handleCLick = (path) => {
+    const logoutHandle = path === 'logout';
+    if (logoutHandle) localStorage.clear();
+    const finalPath = logoutHandle ? '/' : `/${path}-recipes`;
+    history.push(finalPath);
   };
 
   return (
     <Container>
-      <Navbar bg="light" variant="light" className="shadow-sm">
 
-        <Header title="Profile" enableSearch={ false } />
+      <Header title="Profile" enableSearch={ false } />
 
-      </Navbar>
-
-      <Navbar.Brand data-testid="profile-email" className="">
+      <Container data-testid="profile-email" className="mt-5 text-center">
         {emailFromLocalStorage}
-      </Navbar.Brand>
+      </Container>
 
-      <Container>
-        <Button
-          type="button"
-          className="w-40"
-          data-testid="profile-done-btn"
-          onClick={ () => history.push('/done-recipes') }
-        >
-          Done Recipes
-        </Button>
+      <Container className="d-flex flex-column mt-5">
+        { profileBtns.map((buttonTitle) => {
+          const lowerText = buttonTitle.toLocaleLowerCase();
+          return (
+            <Button
+              key={ buttonTitle }
+              className="w-40 m-1"
+              data-testid={ `profile-${lowerText}-btn` }
+              onClick={ () => handleCLick(lowerText) }
+            >
+              { `${buttonTitle} Recipes` }
+            </Button>
+          );
+        }) }
 
-        <Button
-          type="button"
-          className="w-40"
-          variant="primary"
-          data-testid="profile-favorite-btn"
-          onClick={ () => history.push('/favorite-recipes') }
-        >
-          Favorite Recipes
-        </Button>
-
-        <Button
-          type="button"
-          className="w-40"
-          data-testid="profile-logout-btn"
-          onClick={ logout }
-        >
-          Logout
-        </Button>
       </Container>
 
       <Footer />
