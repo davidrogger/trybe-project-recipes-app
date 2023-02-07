@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Card, Container, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Logo from '../components/Logo';
 import { loginAction } from '../redux/actions/profileActions';
 
 function Login() {
@@ -35,10 +36,18 @@ function Login() {
   };
 
   return (
-    <Container className="mt-3">
-      <Card className="shadow-sm">
+    <Container
+      className="mw-100 d-flex justify-content-center align-items-center"
+      style={ { height: '100vh' } }
+    >
+      <Card
+        className="shadow-sm"
+        style={ { width: '350px', height: '500px' } }
+      >
         <Card.Body>
           <Card.Title>Projeto de Receitas</Card.Title>
+
+          <Logo />
 
           <hr />
 

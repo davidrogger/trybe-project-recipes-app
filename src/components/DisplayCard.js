@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { exploreIngredients, searchAction } from '../redux/actions/showcaseActions';
@@ -29,29 +29,41 @@ function DisplayCard({ recipe, typeCard, index, pathname }) {
   };
 
   return (
-    <button
+    <Button
+      className={
+        `${dinamicBg} d-flex rounded overflow-hidden justify-content-center margin-0
+        p-0`
+      }
       type="button"
       data-testid={ `${index}-${typeCard}-card` }
       onClick={ () => handlerClick(redirectPath, recipe.title) }
       style={
-        { width: '148.5px', margin: '2.5%', border: 'none', backgroundColor: 'white' }
+        {
+          width: '148.5px',
+          height: '212px',
+          margin: '2.5%',
+          border: 'none' }
       }
     >
-      <Card className="text-center">
+      <Card
+        className="border-0"
+      >
         <Card.Img
+          style={ { objectFit: 'cover', width: '148.5px' } }
           data-testid={ `${index}-card-img` }
           src={ recipe.image }
           alt={ `${recipe.title}-img` }
           variant="top"
         />
+
         <Card.Footer
+          className={ `${dinamicBg} border-0 m-0` }
           data-testid={ `${index}-card-name` }
-          className={ dinamicBg }
         >
           { recipe.title }
         </Card.Footer>
       </Card>
-    </button>
+    </Button>
   );
 }
 
