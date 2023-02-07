@@ -9,7 +9,6 @@ function Logo() {
     >
       <CardImg
         style={ { objectFit: 'cover' } }
-        fluid
         height={ 170 }
         src={ logo }
       />
