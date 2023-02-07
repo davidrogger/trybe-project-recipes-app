@@ -2,7 +2,7 @@
 
 ## Seção: `Metodologias Ágeis`
 
-- Ultima seção do modulo de frontend, realizando um projeto livre para escolha de gerenciador de estados e desenvolvimento visual de estilos em um grupo organizado pela trybe.
+- Ultima seção do módulo de frontend, realizando um projeto livre para escolha de gerenciador de estados e desenvolvimento visual de estilos em um grupo organizado pela trybe.
 #
 <div align="center">
   <a href="https://davidrogger.github.io/trybe-project-recipes-app">
@@ -16,7 +16,7 @@
 #
 ## Projeto: `Recipes App`
 
-- Aplicação que apresenta diversas receitas seja de comida ou bebidas coletadas de duas APIs, [the meal](https://www.themealdb.com/) e [the cocktail](https://www.thecocktaildb.com/). Onde podemos favoritar as receitas, simular o inicio da receita, marcando passos realizados durante seu preparo, compartilhando o link da receita para enviar para outras pessoas, sendo possivel explorar receitas por nacionalidade ou ingredientes especificos, e também de forma aletadoria com o "surprise me!".
+- Aplicação focado em mobile first que apresenta diversas receitas, seja de comida ou bebidas coletadas de duas APIs, [the meal](https://www.themealdb.com/) e [the cocktail](https://www.thecocktaildb.com/). Onde podemos favoritar as receitas, simular o início da receita, marcando passos realizados durante seu preparo, compartilhando o link da receita para enviar para outras pessoas, sendo possível explorar receitas por nacionalidade ou ingredientes específicos, e também de forma aleatória com o "surprise me!".
 # Tecnologias e ferramentas usadas 🛠
 
 ![React.js](https://img.shields.io/badge/-React.js-61DAFB?style=flat-square&logo=react&logoColor=ffffff)
@@ -29,7 +29,7 @@
 
 # Conclusão
 
-- Foi muito bom trabalhar e conhecer novas pessoas com propostas interessantes, adorei o fato de termos usado o redux ao inves do context API nesse projeto, pois deixou claro que o redux tem uma configuração muito longa com o react usando classes, mas usando o react funcional, redux é tão simples quandto context API, que eu particularmente achei uma forma mais organizada de gerenciar os estados.
+- Foi ótimo trabalhar e conhecer novas pessoas com propostas interessantes, adorei o fato de termos usado o redux ao invés do context API nesse projeto, pois deixou claro que o redux tem uma configuração muito longa com o react usando classes, mas usando o react funcional, redux é tão simples quanto context API, que eu particularmente achei o redux uma forma mais organizada de gerenciar os estados.
 
 </details>
 
