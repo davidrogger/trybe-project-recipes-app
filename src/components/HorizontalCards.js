@@ -6,15 +6,20 @@ import RecipeActions from './RecipeDetails/RecipeActions';
 
 function HorizontalCards({ recipesArray }) {
   const renderTags = (tags, index) => (
-    tags.map((tag) => (
-      <span
-        key={ tag }
-        className="text-muted"
-        data-testid={ `${index}-${tag}-horizontal-tag` }
-      >
-        {`|${tag}|`}
-      </span>
-    ))
+    <div
+      className="d-flex justify-content-center"
+    >
+      {tags.map((tag) => (
+        <span
+          key={ tag }
+          className="text-white bg-dark rounded"
+          style={ { padding: '2px 5px', marginRight: '2px' } }
+          data-testid={ `${index}-${tag}-horizontal-tag` }
+        >
+          {`${tag}`}
+        </span>
+      ))}
+    </div>
   );
   return (
     <Container
@@ -34,7 +39,7 @@ function HorizontalCards({ recipesArray }) {
             to={ `/${recipe.type}s/${recipe.id}` }
           >
             <Card
-              className="text-center d-flex flex-row"
+              className="text-center d-flex flex-row bg-warning"
               style={ { border: 'none' } }
             >
               <Card.Img
@@ -46,8 +51,8 @@ function HorizontalCards({ recipesArray }) {
               />
               <Card.Body
                 data-testid={ `${index}-card-name` }
-                className="bg-warning text-dark"
-                style={ { width: '50%', padding: '5px' } }
+                className="d-flex flex-column text-dark justify-content-around"
+                style={ { height: '140px', width: '50%', padding: '5px' } }
               >
                 <Card.Subtitle
                   data-testid={ `${index}-horizontal-top-text` }
