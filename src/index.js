@@ -11,7 +11,9 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Provider store={ store }>
-    <BrowserRouter>
+    <BrowserRouter
+      basename="trybe-project-recipes-app"
+    >
       <App />
     </BrowserRouter>
   </Provider>,
