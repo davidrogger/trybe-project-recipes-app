@@ -52,7 +52,7 @@ function DisplayCard({ recipe, typeCard, index, pathname }) {
           variant="top"
         />
         <Card.Footer
-          className="bg-warning border-0 m-0"
+          className={ `${dinamicBg} border-0 m-0` }
           data-testid={ `${index}-card-name` }
         >
           { recipe.title }
