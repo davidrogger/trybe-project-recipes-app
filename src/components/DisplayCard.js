@@ -30,14 +30,21 @@ function DisplayCard({ recipe, typeCard, index, pathname }) {
 
   return (
     <button
+      className={ `${dinamicBg} d-flex rounded overflow-hidden` }
       type="button"
       data-testid={ `${index}-${typeCard}-card` }
       onClick={ () => handlerClick(redirectPath, recipe.title) }
       style={
-        { width: '148.5px', margin: '2.5%', border: 'none', backgroundColor: 'white' }
+        {
+          width: '148.5px',
+          height: '212px',
+          margin: '2.5%',
+          border: 'none' }
       }
     >
-      <Card className="text-center">
+      <Card
+        className="border-0"
+      >
         <Card.Img
           data-testid={ `${index}-card-img` }
           src={ recipe.image }
@@ -45,8 +52,8 @@ function DisplayCard({ recipe, typeCard, index, pathname }) {
           variant="top"
         />
         <Card.Footer
+          className="bg-warning border-0 m-0"
           data-testid={ `${index}-card-name` }
-          className={ dinamicBg }
         >
           { recipe.title }
         </Card.Footer>
